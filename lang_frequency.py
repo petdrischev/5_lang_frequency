@@ -1,3 +1,4 @@
+import collections
 from sys import argv
 
 
@@ -12,21 +13,13 @@ def load_data(filepath):
 
 def get_most_frequent_words(text):
     words = [word.strip(',.:;"-()').lower() for word in text.split()]
-    count_words = {word: words.count(word) for word in words}
-    counts = [count for count in count_words.values()]
-    most_freq_words = {}
-    for _ in range(len(counts)):
-        for word in count_words:
-            if len(most_freq_words) >= 10:
-                break
-            if count_words[word] == max(counts):
-                most_freq_words[word] = max(counts)
-        counts.remove(max(counts))
-    for word, count in most_freq_words.items():
+    most_freq_words = collections.Counter(words)
+    top_ten = 10
+    for word, count in most_freq_words.most_common(top_ten):
         print("Word '{0}' occures: {1} times.".format(word, count))
 
 
 if __name__ == '__main__':
-    script, filepath = argv
+    filepath = argv[1]
     loaded_text = load_data(filepath)
     get_most_frequent_words(loaded_text)
