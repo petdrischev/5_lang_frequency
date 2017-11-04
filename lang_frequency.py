@@ -23,7 +23,7 @@ def get_most_frequent_words(text):
                 most_freq_words[word] = max(counts)
         counts.remove(max(counts))
     for word, count in most_freq_words.items():
-        print(f"Word '{word}' occures: {count} times.")
+        print("Word '{0}' occures: {1} times.".format(word, count))
 
 
 if __name__ == '__main__':
