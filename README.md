@@ -1,6 +1,6 @@
 # Frequency Analysis of Words
 
-Module return fisrt ten most frequences words which occures in text.
+Module return  on console fisrt ten most frequences words which occures in text.
 
 # How use
 
