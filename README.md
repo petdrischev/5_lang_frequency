@@ -13,7 +13,7 @@ def load_data(filepath):
   
 def get_most_frequent_words(text):
     ...
-    print(f"Word '{word}' occures: {count} times.")
+    return most_freq_words
 
 ```
 Where filepath, it's path to load text file. Example:
@@ -21,7 +21,9 @@ Where filepath, it's path to load text file. Example:
 import lang_frequency
 filepath = "./text_file.txt"
 loaded_text = load_data(filepath)
-get_most_frequent_words(loaded_text)
+most_freq_words = get_most_frequent_words(loaded_text)
+for word_count_couples in most_freq_words:
+    print(word_count_couples[0])
 ```
 
 # Quickstart
@@ -30,16 +32,9 @@ Example of script launch on Linux, Python 3.5:
 ```bash
 $ python lang_frequency.py <path to file>
 # output example
-#Word 'the' occures: 839 times.
-#Word 'and' occures: 460 times.
-#Word 'you' occures: 444 times.
-#Word 'to' occures: 400 times.
-#Word 'a' occures: 387 times.
-#Word 'of' occures: 382 times.
-#Word 'alice' occures: 370 times.
-#Word 'i' occures: 338 times.
-#Word 'it' occures: 238 times.
-#Word 'in' occures: 216 times.
+#
+#Top 10 most frequent word in order ascrement in loaded text:
+#the and you to a of alice i it in
 ```
 
 # Project Goals
