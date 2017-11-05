@@ -24,6 +24,6 @@ if __name__ == '__main__':
     loaded_text = load_data(filepath)
     most_freq_words = get_most_frequent_words(loaded_text)
     print("\nTop 10 most frequent word in order ascrement in loaded text:")
-    for word in most_freq_words:
-        print('{}'.format(word[0]), end=' ')
+    for word_count_couples in most_freq_words:
+        print('{}'.format(word_count_couples[0]), end=' ')
     print('\n')
